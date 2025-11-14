@@ -1,6 +1,19 @@
-# Script to add widgets to Napari for interactive viewing
+# Viewing Registered Multimodal Datasets in Napari
 
-## Using the scripts
+![pastedImage](https://github.com/user-attachments/assets/b3434888-36e9-41a5-8ee5-304e7581b800)
+
+With these you can select both single-channels for the CODEX and single transcripts for the Xenium.
+It's not ideal having to copy them to the Napari console, but we could turn them into something more polished later.
+
+napari-spatialdata downsamples point layers by default to 100.000 points, which is too sparse for this use case: https://github.com/scverse/napari-spatialdata/blob/aea2eb559c536aae64ba1a57dc71d26c2c66db28/src/napari_spatialdata/constants/config.py#L2
+We can load and view all the transcripts, by overwriting the limit before we load the core into napari, by using the console window and these lines:
+```
+import napari_spatialdata
+napari_spatialdata.constants.config.POINT_THRESHOLD = 10**9 # A billion here is just an example, any large number is fine.
+```
+
+## Script to add widgets to Napari for interactive viewing
+
 The scripts require 'napari' with the `napari-spatialdata` plugin (https://spatialdata.scverse.org/projects/napari/en/latest/) installed. 
 
 To use the scripts:
@@ -21,7 +34,7 @@ To use the scripts:
 5) Open the napari consloe with `Window` -> `Console` 
 6) Copy-Paste the scripts in the Napari console, this will make the widgets appear on the right side.
 
-## CODEX Channel Selector
+### CODEX Channel Selector
 
 `codex_selector.py`
 
@@ -29,7 +42,7 @@ Creates a new image layer from the selected CODEX channel. The colormap and rang
 
 ![image](https://github.com/user-attachments/assets/7b082eb6-bad3-4b88-8b2c-bccfdc7e6c03)
 
-##  Xenium Transcript Selector
+###  Xenium Transcript Selector
 
 `codex_selector.py`
 
