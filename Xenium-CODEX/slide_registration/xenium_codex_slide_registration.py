@@ -1,3 +1,9 @@
+
+"""
+Module providing registration between Xenium and CODEX data
+Assumes that a morphology focus image and the CODEX image have been converted to zarr
+The output is saved as a SpatialData object.
+"""
 import argparse
 import dask
 import dask_image

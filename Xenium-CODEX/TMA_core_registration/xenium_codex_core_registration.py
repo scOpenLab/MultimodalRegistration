@@ -4,7 +4,7 @@ Assumes that a morphology focus image and the CODEX image have been converted to
 The registration is done in two steps:
 1) Coarse registration on the whole image
 2) Finer registration by core
-One SpatialData object is save d for each core
+One SpatialData object is saved for each core
 """
 
 import tempfile
