@@ -1,14 +1,15 @@
-# XeniumCodex
+# Multimodal Omics Registration
 
+The repository is a collection of scripts used in the ScOpenLab for the registration of multiomics datasets.
 The repository is still a work in progress, and scripts/docs will be updated.
 
 ## Structure
+The repository is divided by technology:
+- Xenium-CODEX
+- Xenium-COMET
+- ...
 
-The repo contains two folders one for each main step of the workflow:
-- [Napari_UI_scripts](https://github.com/scOpenLab/XeniumCodex/tree/main/Napari_UI_scripts)
-- [registration](https://github.com/scOpenLab/XeniumCodex/tree/main/registration)
-
-## Workflow
+ # Workflow
 
 # 1) Image registration and TMA core splitting
 
